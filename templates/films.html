@@ -1,0 +1,49 @@
+{% extends "menu.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сегодня на экране</title>
+</head>
+<body>
+
+
+{%block content%}
+<h1 class="text-white fw-bold text-center" style="font-size: 70px">"{{title_page_today}}"</h1>
+<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+            <div><img src="{{ url_for('static', path='img/today/' + films.0.foto) }}" class="d-block mx-auto border border-5 border-primary rounded-4" alt="foto"
+                      style="width: 1000px; height:600px"></div>
+                <div class="carousel-caption align-content-end text-white fw-bold">
+                    <h1 style="font-size: 70px">{{films.0.title}}</h1>
+                    <h4>ВРЕМЯ СЕАНСОВ: {{films.0.time}}</h4>
+                    <h4>ЦЕНА: {{films.0.price}}руб</h4>
+                </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <div><img src="{{ url_for('static', path='img/today/' + films.1.foto) }}" class="d-block mx-auto border border-5 border-primary rounded-4" alt="foto"
+                      style="width: 1000px; height:600px"></div>
+                <div class="carousel-caption align-content-end text-white fw-bold">
+                    <h1 style="font-size: 70px">{{films.1.title}}</h1>
+                    <h4>ВРЕМЯ СЕАНСОВ: {{films.1.time}}</h4>
+                    <h4>ЦЕНА: {{films.1.price}}руб</h4>
+                </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <div><img src="{{ url_for('static', path='img/today/' + films.2.foto) }}" class="d-block mx-auto border border-5 border-primary rounded-4" alt="foto"
+                      style="width: 1000px; height:600px"></div>
+                <div class="carousel-caption align-content-end text-white fw-bold">
+                    <h1 style="font-size: 70px">{{films.2.title}}</h1>
+                    <h4>ВРЕМЯ СЕАНСОВ: {{films.2.time}}</h4>
+                    <h4>ЦЕНА: {{films.2.price}}руб</h4>
+                </div>
+        </div>
+
+    </div>
+</div>
+{%endblock%}
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends "menu.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+{%block menu%}
+<div class="d-block mx-auto border border-5 border-danger rounded-4 bg-white" style="width: 600px;">
+    <h3 class="text-danger text-center">ПРИВЕТ #############! Добро пожаловать на сайт </h3>
+    <div class="d-block mx-auto bg-danger border border-5 border-white rounded-4" style="width: 200px;">
+        <a href="#" style="text-decoration: none"><h3 class="text-white text-center fw-bold">ВЫЙТИ</h3></a>
+    </div>
+</div>
+<div class="w-50 mx-auto mb-2 mt-3 bg-white border border-5 border-primary rounded-4 text-center">
+            <h3 class="text-primary">КИНОТЕАТР</h3>
+            <h1 class="text-primary" style="font-size: 70px">"ФИЛЬМ-ФИЛЬМ-ФИЛЬМ"</h1>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid mb-2">
+                    <div class="cols=25% bg-white border border-5 border-primary rounded-4">
+                        <a class="fs-2 text-primary text-center mx-5"  href="{{ url_for('main_page') }}"
+                           style="text-decoration: none">ГЛАВНАЯ</a></div>
+                    <div class="cols=25% bg-white border border-5 border-primary rounded-4">
+                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('fud_page') }}"
+                           style="text-decoration: none">ФУДКОРТ</a></div>
+                    <div class="cols=25% bg-white border border-5 border-primary rounded-4">
+                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('film_page') }}"
+                           style="text-decoration: none">НА ЭКРАНЕ</a></div>
+                    <div class="cols=25% bg-white border border-5 border-primary rounded-4">
+                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('comment_page') }}"
+                           style="text-decoration: none">ОТЗЫВЫ</a></div>
+            </div>
+        </nav>
+{%endblock%}
+
+{%block content%}
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+            <img src="https://pushinka.top/uploads/posts/2023-04/thumbs/1681408210_pushinka-top-p-shrek-pervii-personazhi-krasivo-7.jpg" alt="кадр 1"  class="d-block mx-auto border border-5 border-white rounded-4"
+                 style="width: 1000px; height=600px">
+            <div class="carousel-caption d-none d-md-block">
+            <h1 class="text-white fw-bold" style="font-size: 70px">МУЛЬТФИЛЬМЫ</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://blog.pond5.com/wp-content/uploads/sites/5/2016/02/057102366-peoples-emotions-cinema-1200x800.jpeg" alt="кадр 2" class="d-block mx-auto border border-5 border-white rounded-4"
+                 style="width:1000px; height:600px">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://i.pinimg.com/originals/e9/17/fe/e917fec8607e2e054694780d6a1e250c.jpg" alt="кадр 3" class="d-block mx-auto border border-5 border-white rounded-4"
+                 style="width:1000px; height:600px">
+            <div class="carousel-caption d-none d-md-block">
+            <h1 class="text-white fw-bold " style="font-size: 70px" >ИСТОРИЧЕСКИЕ БОЕВИКИ</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://klike.net/uploads/posts/2022-09/1662373878_j-34.jpg" alt="кадр 4" class="d-block mx-auto border border-5 border-white rounded-4"
+                 style="width:1000px; height:600px">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://graco-nsk.ru/wp-content/uploads/b/a/f/bafad7887a3bbf08768ccd833402441c.jpeg" alt="кадр 5" class="d-block mx-auto border border-5 border-white rounded-4"
+                 style="width:1000px; height:600px">
+            <div class="carousel-caption d-none d-md-block">
+            <h1 class="text-white fw-bold" style="font-size: 70px">ВОЕННЫЕ</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://static32.tgcnt.ru/posts/_0/13/137bb0ad509e32e38798cbf7395a67b6.jpg" alt="кадр 6" class="d-block mx-auto border border-5 border-white rounded-4"
+                 style="width:1000px; height:600px">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://i01.fotocdn.net/s209/018d4ae7130148a0/public_pin_l/2573130547.jpg" alt="кадр 7" class="d-block mx-auto border border-5 border-white rounded-4"
+                 style="width:1000px; height:600px">
+        </div>
+        </div>
+    </div>
+{%endblock%}
+
+
+
+</body>
+</html>

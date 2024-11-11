@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="cont_form" >
+<form action="/login" method="post" novalidate>
+    <section class="container" >
+        <div >
+
+            <h2 align="center"> {{login}} </h2><br>
+
+
+        </div>
+    </section>
+        <p> Имя пользователя:</p>
+        <input type="text" class="inp_reg" name="username" required><br>
+
+        <p> Пароль:</p>
+        <input type="password" class="inp_reg" name="password" required>
+
+                <div class="buttons">
+                    <button class="bot" type="submit" >ВХОД</button>
+                    <button class="bot" type="button" onclick="window.location.href='{{ url_for ('reg_page') }}';" >РЕГИСТРАЦИЯ</button>
+                    <button class="bot" type="button" onclick="window.location.href='{{ url_for ('start_page') }}';" >НАЗАД</button>
+                </div>
+</form>
+</div>
+</body>
+</html>

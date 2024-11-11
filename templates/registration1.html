@@ -1,0 +1,67 @@
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Форма регистрации</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+
+</head>
+<body>
+    <form method="POST" novalidate>
+
+<div class="cont_reg">
+
+        <p>{{ form.username.label }}</p>
+    <div class="form-row">
+        <input type="text" name="username" id="your-username" class="inp_reg" placeholder="введите логин" required>
+    </div>
+      {% for error in form.username.errors %}
+        <span style="color: red; font-family: Arial;font-size: 20px; font-weight: bold;">{{ error }}</span>
+      {% endfor %}
+
+    <p>{{ form.email.label }}</p>
+    <div class="form-row">
+        <input type="text" name="email" id="your-email" class="inp_reg" placeholder="адрес электронной почты" required>
+    </div>
+      {% for error in form.email.errors %}
+        <span style="color: red; font-family: Arial;font-size: 20px; font-weight: bold;">{{ error }}</span>
+      {% endfor %}
+
+    <p>{{ form.password1.label }}</p>
+    <div class="form-row">
+        <input type="text" name="password1" id="your-password1" class="inp_reg" placeholder="введите пароль" required>
+    </div>
+      {% for error in form.password1.errors %}
+        <span style="color: red; font-family: Arial;font-size: 20px; font-weight: bold;">{{ error }}</span>
+      {% endfor %}
+
+    <p>{{ form.password2.label }}</p>
+    <div class="form-row">
+        <input type="text" name="password2" id="your-password2" class="inp_reg" placeholder="введите пароль повторно" required>
+    </div>
+      {% for error in form.password2.errors %}
+        <span style="color: red; font-family: Arial;font-size: 20px; font-weight: bold;">{{ error }}</span>
+      {% endfor %}
+
+      <p>{{ form.first_name.label }}</p>
+    <div class="form-row">
+        <input type="text" name="first_name" id="your-first_name" class="inp_reg" placeholder="введите ваше имя" required>
+    </div>
+      {% for error in form.first_name.errors %}
+        <span style="color: red; font-family: Arial;font-size: 20px; font-weight: bold;">{{ error }}</span>
+      {% endfor %}
+
+    <p>{{ form.last_name.label }}</p>
+    <div class="form-row">
+        <input type="text" name="last_name" id="your-last_name" class="inp_reg" placeholder="введите вашу фамилию" required>
+    </div>
+      {% for error in form.last_name.errors %}
+        <span style="color: red; font-family: Arial;font-size: 20px; font-weight: bold;">{{ error }}</span>
+      {% endfor %}
+    <div class="buttons">
+    <input class="bot" type="submit" value="ВХОД">
+    <button class="bot" type="button" onclick="location.href='#';" >НАЗАД</button>
+    </div>
+</div>
+</form>
+</body>
+</html>

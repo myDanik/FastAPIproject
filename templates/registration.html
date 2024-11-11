@@ -1,0 +1,54 @@
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Форма регистрации</title>
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+
+</head>
+<body>
+<form action="/reg" method="post" novalidate>
+
+<div class="cont_reg">
+
+        <p>Имя пользователя:</p>
+    <div class="form-row">
+        <input type="text" name="username" id="your-username" class="inp_reg" placeholder="введите логин" required>
+    </div>
+
+
+    <p>Адрес электронной почты:</p>
+    <div class="form-row">
+        <input type="text" name="email" id="your-email" class="inp_reg" placeholder="адрес электронной почты" required>
+    </div>
+
+
+    <p>Пароль</p>
+    <div class="form-row">
+        <input type="text" name="password1" id="your-password1" class="inp_reg" placeholder="введите пароль" required>
+    </div>
+
+
+    <p>Введите пароль повторно:</p>
+    <div class="form-row">
+        <input type="text" name="password2" id="your-password2" class="inp_reg" placeholder="введите пароль повторно" required>
+    </div>
+
+      <p>Ваше имя:</p>
+    <div class="form-row">
+        <input type="text" name="first_name" id="your-first_name" class="inp_reg" placeholder="введите ваше имя" required>
+    </div>
+
+
+    <p>Ваша фамилия:</p>
+    <div class="form-row">
+        <input type="text" name="last_name" id="your-last_name" class="inp_reg" placeholder="введите вашу фамилию" required>
+    </div>
+
+    <div class="buttons">
+    <button class="bot" type="submit">ВХОД</button>
+    <button class="bot" type="button" onclick="window.location.href='{{ url_for('login_page') }}';" >НАЗАД</button>
+    </div>
+</div>
+</form>
+</body>
+</html>
