@@ -8,6 +8,11 @@ from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
+app.include_router(pages.router)
+app.include_router(users.router)
+app.include_router(comments.router)
+
+
 templates = Jinja2Templates(directory="templates")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -18,6 +23,3 @@ async def start_page(request: Request):
     return templates.TemplateResponse(request=request, name="index.html")
 
 
-app.include_router(pages.router)
-app.include_router(users.router)
-app.include_router(comments.router)

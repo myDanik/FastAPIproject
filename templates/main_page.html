@@ -7,10 +7,14 @@
 <body>
 {%block menu%}
 <div class="d-block mx-auto border border-5 border-danger rounded-4 bg-white" style="width: 600px;">
-    <h3 class="text-danger text-center">ПРИВЕТ #############! Добро пожаловать на сайт </h3>
-    <div class="d-block mx-auto bg-danger border border-5 border-white rounded-4" style="width: 200px;">
-        <a href="#" style="text-decoration: none"><h3 class="text-white text-center fw-bold">ВЫЙТИ</h3></a>
-    </div>
+    <h3 class="text-danger text-center">ПРИВЕТ {{username}}! Добро пожаловать на сайт </h3>
+
+
+        <button type="button" class="d-block mx-auto bg-danger border border-5 border-white rounded-4" style="width: 200px;"
+                onclick="location.href='{{ url_for ('logout') }}';">
+            <h3 class="text-white text-center fw-bold">ВЫЙТИ</h3></button>
+
+
 </div>
 <div class="w-50 mx-auto mb-2 mt-3 bg-white border border-5 border-primary rounded-4 text-center">
             <h3 class="text-primary">КИНОТЕАТР</h3>
@@ -28,7 +32,7 @@
                         <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('film_page') }}"
                            style="text-decoration: none">НА ЭКРАНЕ</a></div>
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('comment_page') }}"
+                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('comm_all') }}"
                            style="text-decoration: none">ОТЗЫВЫ</a></div>
             </div>
         </nav>

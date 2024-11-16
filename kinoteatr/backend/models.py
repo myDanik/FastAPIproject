@@ -15,14 +15,18 @@ class User(Base):
     first_name = Column(String)
     last_name = Column(String, nullable=True)
 
+    comments = relationship('Comment', back_populates="user")
+
 
 class Comment(Base):
     __tablename__ = "comments"
 
-    id = Column(Integer, unique=True, primary_key=True, autoincrement=True, index=True)
+    id = Column(Integer, unique=True, primary_key=True, index=True)
     text = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    username = Column(String)
+    user_username = Column(String, ForeignKey('users.username'), autoincrement=True)
+
+    user = relationship("User", back_populates='comments')
 
 
 class A_treat(Base):

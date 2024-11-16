@@ -1,19 +1,18 @@
 from datetime import datetime
 
 from pydantic import BaseModel, EmailStr
-from typing import Optional
+from typing import Optional, List
 
 
 class CommentCreate(BaseModel):
     text: str
-    username: str
 
 
 class Comment(BaseModel):
     id: int
     text: str
-    username: str
     created_at: datetime
+    user_username: str
 
     class Config:
         orm_mode = True
@@ -39,9 +38,15 @@ class User(BaseModel):
     email: str
     first_name: str
     last_name: str
+    comment: List[Comment]
 
     class Config:
         orm_mode = True
+
+
+
+
+
 
 
 

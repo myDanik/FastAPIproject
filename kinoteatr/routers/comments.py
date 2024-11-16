@@ -1,4 +1,4 @@
-from fastapi import APIRouter, FastAPI
+from fastapi import APIRouter
 
 from typing import Annotated
 
@@ -11,64 +11,48 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from starlette import status
 
-from kinoteatr.backend.models import *
+from kinoteatr.backend.models import Comment
 from kinoteatr.backend.database import get_database_session
 from kinoteatr.schemas import CommentCreate
+from kinoteatr.routers.users import db_user
 
-app = FastAPI()
 
-router = APIRouter(prefix="/comment", tags=["comment"])
+router = APIRouter(prefix="/comment", tags=["Отзывы"])
 
 templates = Jinja2Templates(directory="templates")
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+router.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@router.get("/")
-async def comment_page(request: Request):
-    return templates.TemplateResponse(request=request, name="comments.html")
-
-
-@router.post("/create")
-async def comment_create(db: Annotated[Session, Depends(get_database_session)], comment_create: CommentCreate = Depends()):
-    db.execute(insert(Comment).values(
-        text=comment_create.text,
-        username=comment_create.username
-        ))
-    db.commit()
-    return {
-        'status_code': status.HTTP_201_CREATED,
-        'transaction': 'Успешно'
-    }
-
-
-@router.get("/all_users")
+@router.get("/all_comment")
 async def all_comment(db: Annotated[Session, Depends(get_database_session)]):
     comment = db.scalars(select(Comment)).all()
     return comment
 
 
-@router.put("/update_comment")
-async def comment_update(db: Annotated[Session, Depends(get_database_session)], comment_id: int,
-                         com_update: CommentCreate = Depends()):
-    comment = db.scalar(select(Comment).where(Comment.id == comment_id))
-    if comment is None:
+@router.put("/comment_update")
+async def comment_update(request: Request, data: Annotated[CommentCreate, Form()], db: Session = Depends(get_database_session)):
+    com = db.scalar(select(Comment).where(Comment.user_username == db_user[0]))  # type: ignore
+    if com is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail='Отзыв не обнаружен'
+            detail='Вы можете изменять только свой отзыв'
         )
-    db.execute(update(Comment).where(Comment.id == comment_id).values(
-        username=com_update.username,
-        text=com_update.text
+    com = db.scalar(select(Comment).where(Comment.text != CommentCreate.text))
+    if com is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail='Измените свой отзыв перед сохранением'
+        )
+    db.execute(update(Comment).where(Comment.user_username == db_user[0]).values(  # type: ignore
+        text=data.text
         ))
     db.commit()
-    return {
-        'status_code': status.HTTP_200_OK,
-        'transaction': 'Отзыв успешно изменён'
-    }
+    comments = db.query(Comment).all()
+    return templates.TemplateResponse("comm_all.html", {'request': request, 'db': db, 'comments': comments})
 
 
-@router.delete("/delete")
+@router.delete("/delete", response_class=HTMLResponse)
 async def comment_delete(db: Annotated[Session, Depends(get_database_session)], comment_id: int ):
     comment = db.scalar(select(Comment).where(Comment.id == comment_id))
     if comment is None:
