@@ -18,6 +18,7 @@
                     <h1 style="font-size: 70px">{{films.0.title}}</h1>
                     <h4>ВРЕМЯ СЕАНСОВ: {{films.0.time}}</h4>
                     <h4>ЦЕНА: {{films.0.price}}руб</h4>
+                    <a class="fs-4 text-white"  href="{{ url_for ('multfilm_page') }}" >ПОДРОБНЕЕ О ФИЛЬМЕ</a>
                 </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
@@ -27,6 +28,7 @@
                     <h1 style="font-size: 70px">{{films.1.title}}</h1>
                     <h4>ВРЕМЯ СЕАНСОВ: {{films.1.time}}</h4>
                     <h4>ЦЕНА: {{films.1.price}}руб</h4>
+                    <a class="fs-4 text-white"  href="{{ url_for ('film1_page') }}" >ПОДРОБНЕЕ О ФИЛЬМЕ</a>
                 </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
@@ -36,6 +38,7 @@
                     <h1 style="font-size: 70px">{{films.2.title}}</h1>
                     <h4>ВРЕМЯ СЕАНСОВ: {{films.2.time}}</h4>
                     <h4>ЦЕНА: {{films.2.price}}руб</h4>
+                    <a class="fs-4 text-white"  href="{{ url_for ('film2_page') }}" >ПОДРОБНЕЕ О ФИЛЬМЕ</a>
                 </div>
         </div>
 

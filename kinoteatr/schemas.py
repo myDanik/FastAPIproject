@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from typing import Optional, List
 
 
@@ -20,7 +20,7 @@ class Comment(BaseModel):
 
 class UserCreate(BaseModel):
     username: str
-    email:  EmailStr
+    email:  str
     password1: str
     password2: str
     first_name: str

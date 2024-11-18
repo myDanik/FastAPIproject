@@ -6,13 +6,22 @@
 
 </head>
 <body>
-<form action="registr" method="post" novalidate>
+<form action="reg" method="post" novalidate>
 
 <div class="cont_reg">
-
+        <div >
+        <p style="color: red">{{message}}</p>
+        </div>
         <p>Имя пользователя:</p>
     <div class="form-row">
         <input type="text" name="username" id="your-username" class="inp_reg" placeholder="введите логин" required>
+            {% if errors %}
+        <ul>
+            {% for error in errors %}
+                <li>{{ error['loc'][0] }}: {{ error['msg'] }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     </div>
 
 

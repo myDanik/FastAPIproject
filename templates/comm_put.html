@@ -7,10 +7,12 @@
 </head>
 <body>
 
-<form action="comment_create" method="POST"  novalidate>
+
+<form method="POST" action="comment_update">
+    <input type="hidden" name="_method" value="PUT">
 
     <div class="cont_form">
-        <h4>Оставьте отзыв о нашей работе</h4>
+        <h4>Введите изменённый текст Вашего отзыва</h4>
         <div>
         <p style="color: red">{{message}}</p>
         </div>
@@ -21,8 +23,8 @@
                 </div>
 
         <div class="buttons">
-            <button class="bot" type="submit">ОТПРАВИТЬ</button>
-        <button class="bot" type="button" onclick="location.href='{{ url_for ('main_page') }}';">НАЗАД</button>
+            <button class="bot" type="submit">СОХРАНИТЬ</button>
+        <button class="bot" type="button" onclick="location.href='{{ url_for ('comm_all') }}';">НАЗАД</button>
         </div>
     </div>
 

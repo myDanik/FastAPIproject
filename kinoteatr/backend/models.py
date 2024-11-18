@@ -60,9 +60,42 @@ class Drinks(Base):
 
 
 class Films(Base):
-    __tablename__ = "Фильмы"
+    __tablename__ = "Фильмы сегодня"
     id = Column(Integer, unique=True, primary_key=True, autoincrement=True, index=True)
     title = Column(String)
     price = Column(Integer)
     time = Column(String)
     foto = Column(String)
+
+
+class Film(Base):
+    __tablename__ = "film"
+    id = Column(Integer, unique=True, primary_key=True, autoincrement=True, index=True)
+    title = Column(String)
+    description = Column(Text)
+    year = Column(String)
+    country = Column(String)
+    age = Column(String)
+
+    film_actor = relationship('Actor', back_populates="film")
+    film_foto = relationship('Foto_film', back_populates="film" )
+
+
+class Actor(Base):
+    __tablename__ = "film_actor"
+    id = Column(Integer, unique=True, primary_key=True, autoincrement=True, index=True)
+    name = Column(String)
+    foto = Column(String)
+    role = Column(String)
+    film_actor = Column(Integer, ForeignKey('film.id'))
+
+    film = relationship("Film", back_populates='film_actor')
+
+
+class Foto_film(Base):
+    __tablename__ = "film_foto"
+    id = Column(Integer, unique=True, primary_key=True, autoincrement=True, index=True)
+    foto = Column(String)
+    film_foto = Column(Integer, ForeignKey('film.id'))
+
+    film = relationship("Film", back_populates='film_foto')
