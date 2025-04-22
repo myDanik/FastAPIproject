@@ -1,7 +1,7 @@
 {% extends "menu.html" %}
 <html lang="en">
 <head>
-    <link href="{{ url_for('statis') }}">
+    <link href="/static/style.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Фудкорт</title>
 </head>
@@ -12,12 +12,12 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
-            <h1 class="text-white fw-bold text-center" style="font-size: 70px">"{{title_page_fud.0}}"</h1>
+            <h1 class="text-white fw-bold text-center" style="font-size: 70px">"{{title_page_food.0}}"</h1>
                 <div class="d-block mx-auto border border-5 border-primary rounded-4" style="width: 1500px; height:500px">
                     <div class="card-group">
                         {% for i in a_treat %}
                             <div class="card border-primary" style="height:490px">
-                                <div><img src="{{ url_for('static', path='img/fud/' + i.foto) }}" alt="foto" class="card-img"></div>
+                                <div><img src="{{ url_for('static', path='img/food/' + i.photo) }}" alt="photo" class="card-img"></div>
                                     <div class="card-img-overlay text-left align-content-end text-primary fw-bold">
                                         <h4>{{i.title}}</h4>
                                         <p>СОСТАВ: {{i.description}}</p>
@@ -31,12 +31,12 @@
         </div>
 
         <div class="carousel-item" data-bs-interval="10000">
-            <h1 class="text-white fw-bold text-center" style="font-size: 70px">"{{title_page_fud.1}}"</h1>
+            <h1 class="text-white fw-bold text-center" style="font-size: 70px">"{{title_page_food.1}}"</h1>
                 <div class="d-block mx-auto border border-5 border-primary rounded-4" style="width: 1500px; height:500px">
                     <div class="card-group">
                         {% for i in pizza %}
                             <div class="card border-primary" style="height:490px">
-                                <div><img src="{{ url_for('static', path='img/fud/' + i.foto) }}" alt="foto" class="card-img"></div>
+                                <div><img src="{{ url_for('static', path='img/food/' + i.photo) }}" alt="photo" class="card-img"></div>
                                     <div class="card-img-overlay text-left align-content-end text-primary fw-bold">
 
                                         <h4>{{i.title}}</h4>
@@ -51,12 +51,12 @@
                 </div>
         </div>
         <div class="carousel-item" data-bs-interval="10000">
-            <h1 class="text-white fw-bold text-center" style="font-size: 70px">"{{title_page_fud.2}}"</h1>
+            <h1 class="text-white fw-bold text-center" style="font-size: 70px">"{{title_page_food.2}}"</h1>
                 <div class="d-block mx-auto border border-5 border-primary rounded-4" style="width: 1500px; height:500px">
                     <div class="card-group">
                         {% for i in drinks %}
                             <div class="card border-primary" style="height:490px">
-                                <div><img src="{{ url_for('static', path='img/fud/' + i.foto) }}" alt="foto" class="card-img"></div>
+                                <div><img src="{{ url_for('static', path='img/food/' + i.photo) }}" alt="photo" class="card-img"></div>
                                     <div class="card-img-overlay text-left align-content-end text-primary fw-bold">
 
                                         <h4>{{i.title}}</h4>

@@ -11,7 +11,7 @@
 
 
         <button type="button" class="d-block mx-auto bg-danger border border-5 border-white rounded-4" style="width: 200px;"
-                onclick="location.href='{{ url_for ('logout') }}';">
+                onclick="location.href='/auth/logout';">
             <h3 class="text-white text-center fw-bold">ВЫЙТИ</h3></button>
 
 
@@ -23,17 +23,13 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid mb-2">
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5"  href="{{ url_for('main_page') }}"
-                           style="text-decoration: none">ГЛАВНАЯ</a></div>
+                        <a class="fs-2 text-primary text-center mx-5" href="/page/main">ГЛАВНАЯ</a></div>
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('fud_page') }}"
-                           style="text-decoration: none">ФУДКОРТ</a></div>
+                        <a class="fs-2 text-primary text-center mx-5" href="/page/food">МЕНЮ</a></div>
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('film_page') }}"
-                           style="text-decoration: none">НА ЭКРАНЕ</a></div>
+                        <a class="fs-2 text-primary text-center mx-5" href="/page/films">ФИЛЬМЫ</a></div>
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('comm_all') }}"
-                           style="text-decoration: none">ОТЗЫВЫ</a></div>
+                        <a class="fs-2 text-primary text-center mx-5" href="/user/comment/all">ОТЗЫВЫ</a></div>
             </div>
         </nav>
 {%endblock%}
@@ -43,7 +39,7 @@
         <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
             <img src="https://pushinka.top/uploads/posts/2023-04/thumbs/1681408210_pushinka-top-p-shrek-pervii-personazhi-krasivo-7.jpg" alt="кадр 1"  class="d-block mx-auto border border-5 border-white rounded-4"
-                 style="width: 1000px; height=600px">
+                 style="width: 1000px; height: 600px">
             <div class="carousel-caption d-none d-md-block">
             <h1 class="text-white fw-bold" style="font-size: 70px">МУЛЬТФИЛЬМЫ</h1>
             </div>

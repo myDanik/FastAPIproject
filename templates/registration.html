@@ -6,7 +6,7 @@
 
 </head>
 <body>
-<form action="reg" method="post" novalidate>
+<form action="reg" method="POST" novalidate>
 
 <div class="cont_reg">
         <div >
@@ -55,7 +55,7 @@
 
     <div class="buttons">
     <button class="bot" type="submit">ВХОД</button>
-    <button class="bot" type="button" onclick="window.location.href='{{ url_for('login_page') }}';" >НАЗАД</button>
+    <button class="bot" type="button" onclick="window.location.href='/auth/login'">НАЗАД</button>
     </div>
 </div>
 </form>

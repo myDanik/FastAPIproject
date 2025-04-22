@@ -21,16 +21,16 @@ url('https://cdnn21.img.ria.ru/images/91548/33/915483359_0:203:3888:2390_1920x10
         <nav class="navbar navbar-default">
             <div class="container-fluid mb-2">
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5"  href="{{ url_for('main_page') }}"
+                        <a class="fs-2 text-primary text-center mx-5"  href="/page/main"
                            style="text-decoration: none">ГЛАВНАЯ</a></div>
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('fud_page') }}"
+                        <a class="fs-2 text-primary text-center mx-5" href="/page/food"
                            style="text-decoration: none">ФУДКОРТ</a></div>
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('film_page') }}"
+                        <a class="fs-2 text-primary text-center mx-5" href="/page/films"
                            style="text-decoration: none">НА ЭКРАНЕ</a></div>
                     <div class="cols=25% bg-white border border-5 border-primary rounded-4">
-                        <a class="fs-2 text-primary text-center mx-5" href="{{ url_for('comm_all') }}"
+                        <a class="fs-2 text-primary text-center mx-5" href="/user/comment/all"
                            style="text-decoration: none">ОТЗЫВЫ</a></div>
             </div>
         </nav>
@@ -44,7 +44,6 @@ url('https://cdnn21.img.ria.ru/images/91548/33/915483359_0:203:3888:2390_1920x10
     {%block conclusion%}
         <div class="w-50 mx-auto mt-3 bg-white border border-5 border-primary rounded-4 ">
             <h1 class="text-primary text-center">МЫ ЖДЁМ ВАС В НАШЕМ КИНОТЕАТРЕ</h1>
-            <h3 class="text-primary text-center">ПО АДРЕСУ: г.ТОЛЬЯТТИ, ул.ПОБЕДЫ, д.25, ТРК"АЛТЫН"</h3>
         </div>
     {%endblock%}
 </conclusion>
