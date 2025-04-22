@@ -37,8 +37,8 @@ class User(BaseModel):
     username: str
     email: str
     first_name: str
-    last_name: str
-    comment: List[Comment]
+    last_name: Optional[str] = None
+    comments: List[Comment]
 
     class Config:
         orm_mode = True

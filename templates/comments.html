@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form action="comment_create" method="POST"  novalidate>
+<form action="create" method="POST"  novalidate>
 
     <div class="cont_form">
         <h4>Оставьте отзыв о нашей работе</h4>
@@ -22,7 +22,7 @@
 
         <div class="buttons">
             <button class="bot" type="submit">ОТПРАВИТЬ</button>
-        <button class="bot" type="button" onclick="location.href='{{ url_for ('main_page') }}';">НАЗАД</button>
+            <button class="bot" type="button" onclick="location.href='/page/main';">НАЗАД</button>
         </div>
     </div>
 

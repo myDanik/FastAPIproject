@@ -8,7 +8,7 @@
 <body>
 
 
-<form method="POST" action="comment_update">
+<form method="POST" action="/user/comment/update">
     <input type="hidden" name="_method" value="PUT">
 
     <div class="cont_form">
@@ -24,7 +24,7 @@
 
         <div class="buttons">
             <button class="bot" type="submit">СОХРАНИТЬ</button>
-        <button class="bot" type="button" onclick="location.href='{{ url_for ('comm_all') }}';">НАЗАД</button>
+            <button class="bot" type="button" onclick="location.href='/user/comment/all';">НАЗАД</button>
         </div>
     </div>
 
